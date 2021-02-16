@@ -48,6 +48,7 @@ char *rechercheLivre ;//pointeur titre
 char *rechercheAuteur;//pointeur auteur
 T_Bibliotheque B; 
 init( &B );
+chargement(&B);
 
 do
 {
@@ -99,7 +100,7 @@ switch(chx)
 	}
 
 }while(chx!=0);
-
+sauvegarde(&B);
 
 
 
