@@ -22,4 +22,8 @@ afficherChaine("EMPRUNTEUR",(ptrL ->emprunteur));
 printf(" - ");
 afficherChaine("CODE :",(ptrL->code));
 printf("\n");
+
 }
+
+
+

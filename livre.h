@@ -58,4 +58,3 @@ void afficherLivre(const T_livre *ptrL);
 
 
 #endif //fin de compilation conditionnelle
-
