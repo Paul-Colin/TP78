@@ -4,7 +4,8 @@
 int menu()
 {
 	int choix;
-// au programme du TP7 :
+	
+// au programme du TP6 :
 printf("\n\n 1 - ajouter un nouveau livre dans la bibliotheque "); 
 printf("\n 2 - afficher tous les livres de la bibliotheque "); 
 printf("\n 3 - rechercher un livre (par son titre)");  // il peut y avoir plusieurs livres de même titre. Dans ce cas, indiquez le nombre d'exemplaires disponibles
@@ -13,7 +14,7 @@ printf("\n 5 - supprimer un livre de la bibliotheque");
 // si les 5 choix ci dessus sont bien codés, modifiez votre structure T_Livre et passez à 5 champs (avec cote,editeur et annee)
 
 
-// au programme du TP8 :
+// au programme du TP7 :
 // ajouter le champ emprunteur à votre structure T_Livre
 /*
 printf("\n 6 - emprunter un livre de la bibliotheque");
@@ -41,6 +42,10 @@ return choix;
 int main()
 {
 int reponse,chx;
+char recherche[MAX_TITRE];//tableau char pour trouver le titre
+char recherche2[MAX];//tableau char pour trouver auteur
+char *rechercheLivre ;//pointeur titre
+char *rechercheAuteur;//pointeur auteur
 T_Bibliotheque B; 
 init( &B );
 
@@ -61,10 +66,36 @@ switch(chx)
 
 			break;	
 	
-	
-	
-	
-	
+	case 3:
+		printf("\nEntrer le titre d'un livre à rechercher :");
+		rechercheLivre=lire(recherche,MAX_TITRE);
+		if(rechercherTitre(&B,rechercheLivre)!=0){
+			printf("Il y a %d exemplaire(s) de ce livre dans la bibliotheque",rechercherTitre(&B,rechercheLivre));
+		}
+		else{
+			printf("Le livre n'est pas dans la bibliotheque");
+		}
+		break;
+		
+	case 4 :
+		printf("\nEntrer le nom d'un Auteur ");
+		rechercheAuteur=lire(recherche2,MAX); 
+		if(rechercherAuteur(&B,rechercheAuteur)==0){
+			printf("Il n'y a pas de livre de cet auteur");
+		}
+		break;
+		
+	case 5 :
+		printf("\nEntrer le titre d'un livre à supprimer :");
+		rechercheLivre=lire(recherche,MAX_TITRE);
+		printf("\nEntrer le nom de l'auteur du livre à supprimer :");
+		rechercheAuteur=lire(recherche2,MAX);
+		if (supprimer(&B,rechercheLivre,rechercheAuteur)==0){
+			printf("\nLe livre n'est pas dans la bibliotheque");
+		}
+		else{
+			printf("\nSupression réussi");
+		}
 	}
 
 }while(chx!=0);
