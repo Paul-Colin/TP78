@@ -110,14 +110,33 @@ int supprimer(T_Bibliotheque *ptrB, char *rechercheT,char *rechercheA) {
 
 }
 
-int emprunter(T_Bibliotheque *ptrB, char *rechercheE)
+int emprunter(T_Bibliotheque *ptrB, char *rechercheT, char *rechercheA)
 {
-    if(strcmp(rechercheE,ptrB->etagere[0].emprunteur)!=0)
+    int i = 0;
+    int indice =0;
+    char Nomemp[MAX];
+    if(rechercherTitre(ptrB,rechercheT)==0)
     {
-        printf("le livre est déja emprunter ! \n");
+    	return 0; 
     }
-    return 0 ;
-
+    else{
+ 		for (i=0;i<ptrB->nbLivres;i++){
+ 		if(strcmp(rechercheT,ptrB->etagere[i].titre)==0 && strcmp(rechercheA,ptrB->etagere[i].auteur)==0)//on recherche l'indice du livre à emprunter
+    {
+	indice=i;    
+     
+    }
+ 		}   
+    		if(strcmp(ptrB->etagere[indice].emprunteur,"")==0){
+    		printf("Entre votre nom :");
+    		strcpy(ptrB->etagere[indice].emprunteur,lire(Nomemp,MAX));
+    		return 1;
+    		}
+    		else {
+    		return 2 ;
+    		}
+ 	
+   }
 }
 
 void sauvegarde(T_Bibliotheque *ptrB)

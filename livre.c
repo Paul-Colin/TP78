@@ -8,6 +8,8 @@ lireChaine("AUTEUR :", (ptrL->auteur ), MAX);
 lireChaine("EDITEUR",(ptrL ->editeur),MAX) ;
 lireChaine("EMPRUNTEUR",(ptrL ->emprunteur),MAX);
 lireChaine("CODE",(ptrL->code),MAX_CODE);
+//printf("ANNEE");
+//scanf("%d",(ptrL->annee));
 }
 
 void afficherLivre(const T_livre *ptrL)
@@ -22,6 +24,7 @@ afficherChaine("EMPRUNTEUR",(ptrL ->emprunteur));
 printf(" - ");
 afficherChaine("CODE :",(ptrL->code));
 printf("\n");
+
 
 }
 

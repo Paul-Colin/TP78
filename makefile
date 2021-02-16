@@ -6,7 +6,7 @@ all : es.o livre.o biblio.o tpBiblio.c
 
 es.o : es.c
 	$(c) $(op) -c es.c	
-livre.o : livre.c
+livre.o : livre.c livre.h
 	$(c) $(op) -c livre.c	
 biblio.o : biblio.c
 	$(c) $(op) -c biblio.c	

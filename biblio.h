@@ -24,7 +24,7 @@ int ajouterLivre(T_Bibliotheque  *ptrB);
 int  afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int rechercherTitre(T_Bibliotheque *ptrB,char *rechercheT);
 int rechercherAuteur(T_Bibliotheque *ptrB,char *rechercheA);
-int emprunter(T_Bibliotheque *ptrB ,char *rechercheE) ;
+int emprunter(T_Bibliotheque *ptrB ,char *rechercheT,char *rechercheA) ;
 int supprimer(T_Bibliotheque *ptrB, char *rechercheT,char *rechercheA) ;
 void chargement(T_Bibliotheque *ptrB) ;
 void sauvegarde(T_Bibliotheque *ptrB) ;

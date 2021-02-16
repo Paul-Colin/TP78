@@ -46,6 +46,7 @@ char recherche[MAX_TITRE];
 char recherche2[MAX];
 char *rechercheLivre ;
 char *rechercheAuteur;
+int emprunterL;
 
 T_Bibliotheque B; 
 init( &B );
@@ -99,6 +100,21 @@ switch(chx)
 			printf("\nSupression réussi");
 		}
 		break ;
+	    case 6 :
+	    printf("\nEntrer le titre d'un livre à emprunter :");
+		rechercheLivre=lire(recherche,MAX_TITRE);
+		printf("\nEntrer le nom de l'auteur du livre à emprunter :");
+		rechercheAuteur=lire(recherche2,MAX);
+		emprunterL=emprunter(&B,rechercheLivre,rechercheAuteur);
+	    	if(emprunterL==0){
+	    		printf("\nLe livre n'est pas dans la bibliotheque");
+	    	}
+	    	else if (emprunterL==2){
+	    		printf("\n Le livre est déja emprunté ");
+	    	}
+	    	else {
+	    		printf("\n emprunt réussi ");
+	    	}
 
 	   
 
