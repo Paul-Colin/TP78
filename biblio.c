@@ -139,6 +139,31 @@ int emprunter(T_Bibliotheque *ptrB, char *rechercheT, char *rechercheA)
    }
 }
 
+
+int restituer(T_Bibliotheque *ptrB ,char *rechercheT,char *rechercheA){
+	int i=0;
+	int indice=0;
+	
+	if(rechercherTitre(ptrB,rechercheT)==0)
+    	{
+    		return 0; 
+    	}
+    	else{
+    		for (i=0;i<ptrB->nbLivres;i++){
+ 		if(strcmp(rechercheT,ptrB->etagere[i].titre)==0 && strcmp(rechercheA,ptrB->etagere[i].auteur)==0){//on recherche l'indice du livre à restituer
+			indice=i;
+			}
+		}
+		if(strcmp(ptrB->etagere[indice].emprunteur,"")!=0){
+		strcpy(ptrB->etagere[indice].emprunteur,"");
+		return 1;
+		}
+		else {
+			return 2;
+			}
+	}
+}
+
 void sauvegarde(T_Bibliotheque *ptrB)
 {
     FILE *fic=NULL; //le type FILE

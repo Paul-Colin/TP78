@@ -47,6 +47,7 @@ char recherche2[MAX];
 char *rechercheLivre ;
 char *rechercheAuteur;
 int emprunterL;
+int restituerL;
 
 T_Bibliotheque B; 
 init( &B );
@@ -115,8 +116,22 @@ switch(chx)
 	    	else {
 	    		printf("\n emprunt réussi ");
 	    	}
-
-	   
+		break;
+	    case 7 : 
+	    printf("\nEntrer le titre du livre à restituer :");
+	    rechercheLivre=lire(recherche,MAX_TITRE);
+	    printf("\nEntrer le nom de l'auteur du livre à restituer :");
+	    rechercheAuteur=lire(recherche2,MAX);
+	    restituerL=restituer(&B,rechercheLivre,rechercheAuteur);
+	    if(restituerL==0){
+	    	printf("\nLe livre n'est pas dans la bibliotheque");
+	    }
+	    else if(restituerL==1){
+	    	printf("\nLe livre a été restitué avec succès");
+	    }
+	    else{
+	    printf("\nLe Livre été déjà restitué");
+	    }
 
 	}
 
