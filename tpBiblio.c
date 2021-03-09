@@ -143,6 +143,11 @@ switch(chx)
 	    tri_auteur(&B);
 	    afficherBibliotheque(&B);
 	    break;
+	    
+	    case 10 :
+	    tri_annee(&B); 
+	    afficherBibliotheque(&B);
+	    break;
 
 	}
 

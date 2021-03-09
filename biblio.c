@@ -210,6 +210,30 @@ void tri_auteur(T_Bibliotheque *ptrB){
 
 }
 
+void tri_annee(T_Bibliotheque *ptrB){
+//tri à bulle 	
+	int i ;
+	int j;
+	T_Bibliotheque aux ;
+	for (i=1;i<(ptrB->nbLivres);i++){
+		
+		for (j=0;j<(ptrB->nbLivres)-1;j++){
+			if(ptrB->etagere[j].annee>ptrB->etagere[j+1].annee){
+				aux.etagere[j]=ptrB->etagere[j];
+				ptrB->etagere[j]=ptrB->etagere[j+1];
+				ptrB->etagere[j+1]=aux.etagere[j];
+				
+		
+			}
+		}
+	} 
+	
+
+}
+
+
+
+
 void sauvegarde(T_Bibliotheque *ptrB)
 {
     FILE *fic=NULL; //le type FILE

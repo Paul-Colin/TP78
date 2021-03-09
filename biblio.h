@@ -29,8 +29,10 @@ int supprimer(T_Bibliotheque *ptrB, char *rechercheT,char *rechercheA) ;
 int restituer(T_Bibliotheque *ptrB ,char *rechercheT,char *rechercheA);
 void tri_titre(T_Bibliotheque *ptrB); 
 void tri_auteur(T_Bibliotheque *ptrB);
+void tri_annee(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB) ;
 void sauvegarde(T_Bibliotheque *ptrB) ;
+
 
 
 #endif
