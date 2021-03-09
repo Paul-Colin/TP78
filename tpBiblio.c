@@ -132,6 +132,17 @@ switch(chx)
 	    else{
 	    printf("\nLe Livre été déjà restitué");
 	    }
+	    break;
+	    
+	    case 8 :
+	    tri_titre(&B);
+	    afficherBibliotheque(&B);
+	    break;
+	    
+	    case 9 :
+	    tri_auteur(&B);
+	    afficherBibliotheque(&B);
+	    break;
 
 	}
 

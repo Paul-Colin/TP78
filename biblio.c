@@ -164,6 +164,52 @@ int restituer(T_Bibliotheque *ptrB ,char *rechercheT,char *rechercheA){
 	}
 }
 
+
+
+
+
+void tri_titre(T_Bibliotheque *ptrB){
+//tri à bulle 	
+	int i ;
+	int j;
+	T_Bibliotheque aux ;
+	for (i=1;i<(ptrB->nbLivres);i++){
+		
+		for (j=0;j<(ptrB->nbLivres)-1;j++){
+			if(strcmp(ptrB->etagere[j].titre,ptrB->etagere[j+1].titre)>0){
+				aux.etagere[j]=ptrB->etagere[j];
+				ptrB->etagere[j]=ptrB->etagere[j+1];
+				ptrB->etagere[j+1]=aux.etagere[j];
+				
+		
+			}
+		}
+	} 
+	
+
+}
+
+void tri_auteur(T_Bibliotheque *ptrB){
+//tri à bulle 	
+	int i ;
+	int j;
+	T_Bibliotheque aux ;
+	for (i=1;i<(ptrB->nbLivres);i++){
+		
+		for (j=0;j<(ptrB->nbLivres)-1;j++){
+			if(strcmp(ptrB->etagere[j].auteur,ptrB->etagere[j+1].auteur)>0){
+				aux.etagere[j]=ptrB->etagere[j];
+				ptrB->etagere[j]=ptrB->etagere[j+1];
+				ptrB->etagere[j+1]=aux.etagere[j];
+				
+		
+			}
+		}
+	} 
+	
+
+}
+
 void sauvegarde(T_Bibliotheque *ptrB)
 {
     FILE *fic=NULL; //le type FILE
