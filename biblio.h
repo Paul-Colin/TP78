@@ -32,6 +32,9 @@ void tri_auteur(T_Bibliotheque *ptrB);
 void tri_annee(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB) ;
 void sauvegarde(T_Bibliotheque *ptrB) ;
+void lireDateSysteme(T_Emp *E);
+void afficherLivreEmp(T_livre *L);
+void LivreDispo(T_Bibliotheque *ptrB);
 
 
 
